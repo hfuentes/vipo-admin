@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,6 @@ export class ApiService {
   ) { }
 
   getNoticias() {
-    return this.http.get('/api/noticias').toPromise();
+    return this.http.get(`${environment.apiUrl}/api/noticias`).toPromise();
   }
 }

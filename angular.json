@@ -76,8 +76,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "vipo-usach-admin:build:production",
-              "proxyConfig": "./proxy.conf.json"
+              "browserTarget": "vipo-usach-admin:build:production"
             },
             "development": {
               "browserTarget": "vipo-usach-admin:build:development",
