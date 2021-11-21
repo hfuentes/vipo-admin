@@ -11,7 +11,16 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
+  api(name: string, id?: string) {
+    const base = `${environment.apiUrl}/api/${name}`;
+    return id ? `${base}/${id}` : base;
+  }
+
   getNoticias() {
-    return this.http.get(`${environment.apiUrl}/api/noticias`).toPromise();
+    return this.http.get(this.api('noticias')).toPromise();
+  }
+
+  deleteNoticia(id: string) {
+    return this.http.delete(this.api('noticias', id)).toPromise();
   }
 }

@@ -12,6 +12,7 @@ import { AcademicosComponent } from './pages/academicos/academicos.component';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorHandlerComponent } from './components/error-handler/error-handler.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     AdmisionComponent,
     AcademicosComponent,
     EstudiantesComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorHandlerComponent
   ],
   imports: [
     BrowserModule,
