@@ -1,0 +1,14 @@
+<div *ngIf="loading" class="{{settings && settings.place ? settings.place : 'text-center'}}">
+  <div class="{{settings && settings.style ? settings.style : 'spinner-border'}} {{settings && settings.type ? settings.type : 'text-primary'}}" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+<ng-content *ngIf="!loading && !error"></ng-content>
+<div *ngIf="error && !loading">
+  <div class="alert {{error.type}} alert-dismissible fade show" role="alert">
+    {{ error.message }}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- <button *ngIf="error.showClose" (click)="close()" type="button"  data-bs-dismiss="alert" aria-label="Close" >Volver</button> -->
+    <button *ngIf="error.showClose" (click)="close()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" value="Volver Atrás"></button>
+  </div>
+</div>
