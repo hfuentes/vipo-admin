@@ -11,6 +11,6 @@ export class ApiService {
   ) { }
 
   getNoticias() {
-    return this.http.get('https://vipo-usach-serve.herokuapp.com/api/noticias').toPromise();
+    return this.http.get('/api/noticias').toPromise();
   }
 }
