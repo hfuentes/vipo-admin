@@ -13,6 +13,8 @@ import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component'
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandlerComponent } from './components/error-handler/error-handler.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ErrorHandlerComponent } from './components/error-handler/error-handler.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    AngularEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

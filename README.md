@@ -1,5 +1,13 @@
 # VipoUsachAdmin
 
+## Documentación propia
+
+### Plugins
+
+Editor de Texto: https://awesomeopensource.com/project/kolkov/angular-editor
+
+## Documentación por defecto Angular CLI
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
 ## Development server

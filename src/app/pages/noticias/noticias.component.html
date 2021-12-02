@@ -3,10 +3,31 @@
   Administrará todos los contenidos Noticias, crear / modificar y eliminar
 </p>
 <hr>
-
-
-
 <app-error-handler [loading]="loadSettings.loading" [error]="loadSettings.error">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row mb-3">
+      <div class="col-12">
+        <label for="titulo" class="form-label text-muted lh-1 fw-light fs-6">Título</label>
+        <input type="text" class="form-control" id="titulo" formControlName="titulo">
+      </div>
+      <div class="col-12">
+        <label for="bajada" class="form-label text-muted lh-1 fw-light fs-6">Bajada</label>
+        <input type="text" class="form-control" id="bajada" formControlName="bajada">
+      </div>
+      <div class="mb-3">
+        <label for="imagen" class="form-label">Imagen</label>
+        <input class="form-control" type="file" id="imagen" (change)="onFileChange($event)">
+      </div>
+      <div class="col-12">
+        <label for="cuerpo" class="form-label text-muted lh-1 fw-light fs-6">Cuerpo</label>
+        <!-- <input type="text" class="form-control" id="cuerpo" formControlName="cuerpo"> -->
+        <angular-editor formControlName="cuerpo"></angular-editor>
+      </div>
+      <div class="col-12 mt-3">
+        <button type="submit" class="btn btn-success" [disabled]="!form.valid">Guardar</button>
+      </div>
+    </div>
+  </form>
   <div class="table-responsive">
     <table class="table table-striped table-bordered">
       <thead>
@@ -19,9 +40,9 @@
       <tbody>
         <tr *ngFor="let item of noticias">
           <td>{{ item.titulo }}</td>
-          <td>{{ item.createdAt | date:"full" }}</td>
+          <td>{{ item.createdAt | date:"dd-MM-yyyy hh:mm" }}</td>
           <td>
-            <i class="icon-edit-1 pe-2" title="Editar"></i>
+            <i class="icon-edit-1 pe-2" title="Editar" (click)="loadEdit(item.id)"></i>
             <i class="icon-cancel-circle" title="Eliminar" (click)="delete(item.id)"></i>
           </td>
         </tr>
