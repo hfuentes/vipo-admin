@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ErrorHandler, Error } from 'src/app/components/error-handler/error-handler.component';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -10,11 +10,15 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class NoticiasComponent implements OnInit {
 
+  @ViewChild('imagenInput')
+  imagenInput?: ElementRef;
+
   loadSettings: ErrorHandler = {
     loading: false,
     error: undefined
   };
   noticias: any;
+  val: any;
   form = this.formBuilder.group({
     id: [''],
     imagen: [null],
@@ -90,6 +94,13 @@ export class NoticiasComponent implements OnInit {
     }
   }
 
+  removeImage() {
+    if (this.imagenInput) {
+      this.imagenInput.nativeElement.value = '';
+    }
+    this.form.patchValue({ imagen: undefined });
+  }
+
   setNoticias(data: any) {
     this.noticias = data;
   }
@@ -109,6 +120,7 @@ export class NoticiasComponent implements OnInit {
 
   resetForm() {
     this.form.reset();
+    this.removeImage();
   }
 
 }
