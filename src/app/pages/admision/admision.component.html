@@ -1,1 +1,10 @@
-<p>admision works!</p>
+<h1>Administrador Admisión</h1>
+<p class="lead">
+  Administrará todos los contenidos de la sección Admisión
+</p>
+<hr>
+<app-error-handler [loading]="loadSettings.loading" [error]="loadSettings.error">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  </form>
+</app-error-handler>

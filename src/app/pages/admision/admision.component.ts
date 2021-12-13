@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ErrorHandler } from 'src/app/components/error-handler/error-handler.component';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-admision',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdmisionComponent implements OnInit {
 
-  constructor() { }
+  loadSettings: ErrorHandler = {
+    loading: false,
+    error: undefined
+  };
+  form = this.formBuilder.group({
+    id: [''],
+    fechas: [''],
+    requisitos: [''],
+    becas: [''],
+    postula: ['']
+  });
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+
   }
 
 }

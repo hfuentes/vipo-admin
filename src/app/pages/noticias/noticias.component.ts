@@ -24,7 +24,8 @@ export class NoticiasComponent implements OnInit {
     imagen: [null],
     titulo: ['', Validators.required],
     bajada: [''],
-    cuerpo: ['']
+    cuerpo: [''],
+    publicado: [false]
   });
 
   constructor(
@@ -82,6 +83,16 @@ export class NoticiasComponent implements OnInit {
     }
   }
 
+  updatePublicar(id: string, publicado: Boolean) {
+    this.resetLoading();
+    this.apiService.updateNoticia(id, { publicado })
+      .then(() => this.apiService.getNoticias())
+      .then(data => this.setNoticias(data))
+      .then(() => this.resetForm())
+      .catch(err => this.handleCatch(err))
+      .finally(() => this.handleFinally());
+  }
+
   onFileChange(event: any) {
     const reader = new FileReader();
     if (event.target.files && event.target.files.length) {
@@ -120,6 +131,7 @@ export class NoticiasComponent implements OnInit {
 
   resetForm() {
     this.form.reset();
+    this.form.patchValue({ publicado: false });
     this.removeImage();
   }
 
