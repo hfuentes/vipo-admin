@@ -1,1 +1,168 @@
-<p>inicio works!</p>
+<h1>Administrador Pagina Inicial</h1>
+<p class="lead">
+  Administrará todos los contenidos de la página inicial
+</p>
+<hr>
+<app-error-handler [loading]="loadSettings.loading" [error]="loadSettings.error">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <label for="slide1" class="form-label text-muted lh-1 fw-light fs-6">Slide 1 - Carrusel Pagina Inicial</label>
+        <input #slide1Input class="form-control" type="file" id="slide1" (change)="onImageChange('slide1', $event)">
+      </div>
+      <ng-container *ngIf="form.controls.slide1.value">
+        <div class="col-12 mb-3">
+          <button class="btn btn-danger btn-sm" (click)="removeImage('slide1')">Quitar imagen</button>
+        </div>
+        <div class="col-12 mb-3">
+          <img [src]="form.controls.slide1.value" class="img-fluid img-thumbnail"
+            alt="Slide 1 - Carrusel Pagina Inicial">
+        </div>
+      </ng-container>
+      <div class="col-12 mb-3">
+        <label for="slide2" class="form-label text-muted lh-1 fw-light fs-6">Slide 2 - Carrusel Pagina Inicial</label>
+        <input #slide2Input class="form-control" type="file" id="slide2" (change)="onImageChange('slide2', $event)">
+      </div>
+      <ng-container *ngIf="form.controls.slide2.value">
+        <div class="col-12 mb-3">
+          <button class="btn btn-danger btn-sm" (click)="removeImage('slide2')">Quitar imagen</button>
+        </div>
+        <div class="col-12 mb-3">
+          <img [src]="form.controls.slide2.value" class="img-fluid img-thumbnail"
+            alt="Slide 2 - Carrusel Pagina Inicial">
+        </div>
+      </ng-container>
+      <div class="col-12 mb-3">
+        <label for="slide3" class="form-label text-muted lh-1 fw-light fs-6">Slide 3 - Carrusel Pagina Inicial</label>
+        <input #slide3Input class="form-control" type="file" id="slide3" (change)="onImageChange('slide3', $event)">
+      </div>
+      <ng-container *ngIf="form.controls.slide3.value">
+        <div class="col-12 mb-3">
+          <button class="btn btn-danger btn-sm" (click)="removeImage('slide3')">Quitar imagen</button>
+        </div>
+        <div class="col-12 mb-3">
+          <img [src]="form.controls.slide3.value" class="img-fluid img-thumbnail"
+            alt="Slide 3 - Carrusel Pagina Inicial">
+        </div>
+      </ng-container>
+      <div class="col-12 mb-3">
+        <label for="slide4" class="form-label text-muted lh-1 fw-light fs-6">Slide 4 - Carrusel Pagina Inicial</label>
+        <input #slide4Input class="form-control" type="file" id="slide4" (change)="onImageChange('slide4', $event)">
+      </div>
+      <ng-container *ngIf="form.controls.slide4.value">
+        <div class="col-12 mb-3">
+          <button class="btn btn-danger btn-sm" (click)="removeImage('slide4')">Quitar imagen</button>
+        </div>
+        <div class="col-12 mb-3">
+          <img [src]="form.controls.slide4.value" class="img-fluid img-thumbnail"
+            alt="Slide 4 - Carrusel Pagina Inicial">
+        </div>
+      </ng-container>
+      <div class="col-12 mb-3">
+        <label for="video" class="form-label text-muted lh-1 fw-light fs-6">Link Video Bienvenida (youtube)</label>
+        <input type="text" class="form-control" id="video" formControlName="video">
+      </div>
+      <div class="col-12 mb-3">
+        <label for="email" class="form-label text-muted lh-1 fw-light fs-6">E-mail - Recepción de Consultas</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+      <div class="col-12 mb-3">
+        <label for="noticia1" class="form-label text-muted lh-1 fw-light fs-6">Selección de Noticia destacada 1 - (Las
+          noticias de la lista fueron ingresadas en el administrador de noticias)</label>
+        <select class="form-select" id="noticia1" (change)="onNoticiaChange('noticia1', $event)"
+          formControlName="noticia1">
+          <option value="" disabled>Seleccionar ...</option>
+          <option *ngFor="let noticia of noticias" [ngValue]="noticia.id">{{ noticia.titulo }} - Creación:
+            {{ noticia.createdAt | date:"dd-MM-yyyy hh:mm" }}</option>
+        </select>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="noticia2" class="form-label text-muted lh-1 fw-light fs-6">Selección de Noticia destacada 2 - (Las
+          noticias de la lista fueron ingresadas en el administrador de noticias)</label>
+        <select class="form-select" id="noticia2" (change)="onNoticiaChange('noticia2', $event)"
+          formControlName="noticia2">
+          <option value="" disabled>Seleccionar ...</option>
+          <option *ngFor="let noticia of noticias" [ngValue]="noticia.id">{{ noticia.titulo }} - Creación:
+            {{ noticia.createdAt | date:"dd-MM-yyyy hh:mm" }}</option>
+        </select>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="noticia3" class="form-label text-muted lh-1 fw-light fs-6">Selección de Noticia destacada 3 - (Las
+          noticias de la lista fueron ingresadas en el administrador de noticias)</label>
+        <select class="form-select" id="noticia3" (change)="onNoticiaChange('noticia3', $event)"
+          formControlName="noticia3">
+          <option value="" disabled>Seleccionar ...</option>
+          <option *ngFor="let noticia of noticias" [ngValue]="noticia.id">{{ noticia.titulo }} - Creación:
+            {{ noticia.createdAt | date:"dd-MM-yyyy hh:mm" }}</option>
+        </select>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="admision" class="form-label text-muted lh-1 fw-light fs-6">Imagen Bloque Admisión</label>
+        <input #admisionInput class="form-control" type="file" id="admision"
+          (change)="onImageChange('admision', $event)">
+      </div>
+      <ng-container *ngIf="form.controls.admision.value">
+        <div class="col-12 mb-3">
+          <button class="btn btn-danger btn-sm" (click)="removeImage('admision')">Quitar imagen</button>
+        </div>
+        <div class="col-12 mb-3">
+          <img [src]="form.controls.admision.value" class="img-fluid img-thumbnail" alt="Imagen Bloque Admisión">
+        </div>
+      </ng-container>
+      <div class="col-12 mb-3">
+        <label for="conocenos" class="form-label text-muted lh-1 fw-light fs-6">Imagen Bloque Conócenos</label>
+        <input #conocenosInput class="form-control" type="file" id="conocenos"
+          (change)="onImageChange('conocenos', $event)">
+      </div>
+      <ng-container *ngIf="form.controls.conocenos.value">
+        <div class="col-12 mb-3">
+          <button class="btn btn-danger btn-sm" (click)="removeImage('conocenos')">Quitar imagen</button>
+        </div>
+        <div class="col-12 mb-3">
+          <img [src]="form.controls.conocenos.value" class="img-fluid img-thumbnail" alt="Imagen Bloque Conócenos">
+        </div>
+      </ng-container>
+      <div class="col-12 mb-3">
+        <label for="plan" class="form-label text-muted lh-1 fw-light fs-6">Imagen Bloque Plan de Estudios</label>
+        <input #planInput class="form-control" type="file" id="plan" (change)="onImageChange('plan', $event)">
+      </div>
+      <ng-container *ngIf="form.controls.plan.value">
+        <div class="col-12 mb-3">
+          <button class="btn btn-danger btn-sm" (click)="removeImage('plan')">Quitar imagen</button>
+        </div>
+        <div class="col-12 mb-3">
+          <img [src]="form.controls.plan.value" class="img-fluid img-thumbnail" alt="Imagen Bloque Plan de Estudios">
+        </div>
+      </ng-container>
+      <div class="col-12 mb-3">
+        <label for="acreditacion" class="form-label text-muted lh-1 fw-light fs-6">Imagen Bloque Acreditación</label>
+        <input #acreditacionInput class="form-control" type="file" id="acreditacion"
+          (change)="onImageChange('acreditacion', $event)">
+      </div>
+      <ng-container *ngIf="form.controls.acreditacion.value">
+        <div class="col-12 mb-3">
+          <button class="btn btn-danger btn-sm" (click)="removeImage('acreditacion')">Quitar imagen</button>
+        </div>
+        <div class="col-12 mb-3">
+          <img [src]="form.controls.acreditacion.value" class="img-fluid img-thumbnail"
+            alt="Imagen Bloque Acreditación">
+        </div>
+      </ng-container>
+      <div class="col-12 mb-3">
+        <label for="facebook" class="form-label text-muted lh-1 fw-light fs-6">Link Facebook</label>
+        <input type="text" class="form-control" id="facebook" formControlName="facebook">
+      </div>
+      <div class="col-12 mb-3">
+        <label for="twitter" class="form-label text-muted lh-1 fw-light fs-6">Link Twitter</label>
+        <input type="text" class="form-control" id="twitter" formControlName="twitter">
+      </div>
+      <div class="col-12 mb-3">
+        <label for="instagram" class="form-label text-muted lh-1 fw-light fs-6">Link Instagram</label>
+        <input type="text" class="form-control" id="instagram" formControlName="instagram">
+      </div>
+      <div class="col-12 mb-3">
+        <button type="submit" class="btn btn-success" [disabled]="!form.valid">Guardar</button>
+      </div>
+    </div>
+  </form>
+</app-error-handler>

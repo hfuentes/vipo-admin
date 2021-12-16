@@ -18,7 +18,6 @@ export class NoticiasComponent implements OnInit {
     error: undefined
   };
   noticias: any;
-  val: any;
   form = this.formBuilder.group({
     id: [''],
     imagen: [null],
