@@ -108,7 +108,7 @@ export class NoticiasComponent implements OnInit {
     if (this.imagenInput) {
       this.imagenInput.nativeElement.value = '';
     }
-    this.form.patchValue({ imagen: undefined });
+    this.form.patchValue({ imagen: '' });
   }
 
   setNoticias(data: any) {

@@ -69,8 +69,7 @@
       <div class="col-12 mb-3">
         <label for="noticia1" class="form-label text-muted lh-1 fw-light fs-6">Selección de Noticia destacada 1 - (Las
           noticias de la lista fueron ingresadas en el administrador de noticias)</label>
-        <select class="form-select" id="noticia1" (change)="onNoticiaChange('noticia1', $event)"
-          formControlName="noticia1">
+        <select class="form-select" id="noticia1" formControlName="noticia1">
           <option value="" disabled>Seleccionar ...</option>
           <option *ngFor="let noticia of noticias" [ngValue]="noticia.id">{{ noticia.titulo }} - Creación:
             {{ noticia.createdAt | date:"dd-MM-yyyy hh:mm" }}</option>
@@ -79,8 +78,7 @@
       <div class="col-12 mb-3">
         <label for="noticia2" class="form-label text-muted lh-1 fw-light fs-6">Selección de Noticia destacada 2 - (Las
           noticias de la lista fueron ingresadas en el administrador de noticias)</label>
-        <select class="form-select" id="noticia2" (change)="onNoticiaChange('noticia2', $event)"
-          formControlName="noticia2">
+        <select class="form-select" id="noticia2" formControlName="noticia2">
           <option value="" disabled>Seleccionar ...</option>
           <option *ngFor="let noticia of noticias" [ngValue]="noticia.id">{{ noticia.titulo }} - Creación:
             {{ noticia.createdAt | date:"dd-MM-yyyy hh:mm" }}</option>
@@ -89,8 +87,7 @@
       <div class="col-12 mb-3">
         <label for="noticia3" class="form-label text-muted lh-1 fw-light fs-6">Selección de Noticia destacada 3 - (Las
           noticias de la lista fueron ingresadas en el administrador de noticias)</label>
-        <select class="form-select" id="noticia3" (change)="onNoticiaChange('noticia3', $event)"
-          formControlName="noticia3">
+        <select class="form-select" id="noticia3" formControlName="noticia3">
           <option value="" disabled>Seleccionar ...</option>
           <option *ngFor="let noticia of noticias" [ngValue]="noticia.id">{{ noticia.titulo }} - Creación:
             {{ noticia.createdAt | date:"dd-MM-yyyy hh:mm" }}</option>

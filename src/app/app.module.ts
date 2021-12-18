@@ -13,7 +13,7 @@ import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component'
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandlerComponent } from './components/error-handler/error-handler.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
@@ -33,6 +33,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     AngularEditorModule
   ],

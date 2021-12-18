@@ -43,4 +43,12 @@ export class ApiService {
   updateAdmision(id: string, data: any) {
     return this.http.put(this.api('admision', id), data).toPromise();
   }
+
+  // pagina inicial
+  getInicial() {
+    return this.http.get(this.api('inicial')).toPromise();
+  }
+  updateInicial(id: string, data: any) {
+    return this.http.put(this.api('inicial', id), data).toPromise();
+  }
 }

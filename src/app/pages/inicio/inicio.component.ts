@@ -71,14 +71,14 @@ export class InicioComponent implements OnInit {
   ngOnInit(): void {
     this.resetLoading();
     this.apiService
-      .getNoticiasActivas()
-      .then(data => this.setNoticias(data))
-      .catch((err) => this.handleCatch(err))
+      .getInicial()
+      .then(data => {
+        this.form.patchValue(data);
+        return this.apiService.getNoticiasActivas();
+      })
+      .then(data => this.noticias = data)
+      .catch(err => this.handleCatch(err))
       .finally(() => this.handleFinally());
-  }
-
-  setNoticias(data: any) {
-    this.noticias = data;
   }
 
   resetLoading() {
@@ -95,7 +95,10 @@ export class InicioComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    this.resetLoading();
+    this.apiService.updateInicial(this.form.value.id, this.form.value)
+      .catch((err) => this.handleCatch(err))
+      .finally(() => this.handleFinally());
   }
 
   onImageChange(formControlName: string, event: any) {
@@ -112,12 +115,6 @@ export class InicioComponent implements OnInit {
     }
   }
 
-  onNoticiaChange(formControlName: string, event: any) {
-    this.form.get(formControlName)?.setValue(event.target.value, {
-      onlySelf: true
-    });
-  }
-
   removeImage(formControlName: string) {
     switch (formControlName) {
       case 'slide1': if (this.slide1Input) this.slide1Input.nativeElement.value = ''; break;
@@ -130,7 +127,7 @@ export class InicioComponent implements OnInit {
       case 'acreditacion': if (this.acreditacionInput) this.acreditacionInput.nativeElement.value = ''; break;
     }
     let patch: any = {};
-    patch[formControlName] = undefined;
+    patch[formControlName] = '';
     this.form.patchValue(patch);
   }
 
