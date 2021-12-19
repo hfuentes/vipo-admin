@@ -36,6 +36,23 @@ export class ApiService {
     return this.http.put(this.api('noticias', id), data).toPromise();
   }
 
+  // academicos
+  getAcademico(id: string) {
+    return this.http.get(this.api('academicos', id)).toPromise();
+  }
+  getAcademicos() {
+    return this.http.get(this.api('academicos')).toPromise();
+  }
+  deleteAcademico(id: string) {
+    return this.http.delete(this.api('academicos', id)).toPromise();
+  }
+  createAcademico(data: any) {
+    return this.http.post(this.api('academicos'), data).toPromise();
+  }
+  updateAcademico(id: string, data: any) {
+    return this.http.put(this.api('academicos', id), data).toPromise();
+  }
+
   // admision
   getAdmision() {
     return this.http.get(this.api('admision')).toPromise();
