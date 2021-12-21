@@ -53,6 +53,40 @@ export class ApiService {
     return this.http.put(this.api('academicos', id), data).toPromise();
   }
 
+  // estudiantes
+  getEstudiante(id: string) {
+    return this.http.get(this.api('estudiantes', id)).toPromise();
+  }
+  getEstudiantes() {
+    return this.http.get(this.api('estudiantes')).toPromise();
+  }
+  deleteEstudiante(id: string) {
+    return this.http.delete(this.api('estudiantes', id)).toPromise();
+  }
+  createEstudiante(data: any) {
+    return this.http.post(this.api('estudiantes'), data).toPromise();
+  }
+  updateEstudiante(id: string, data: any) {
+    return this.http.put(this.api('estudiantes', id), data).toPromise();
+  }
+
+  // Tesis
+  getTesis(id: string) {
+    return this.http.get(this.api('tesis', id)).toPromise();
+  }
+  getTesisLista() {
+    return this.http.get(this.api('tesis')).toPromise();
+  }
+  deleteTesis(id: string) {
+    return this.http.delete(this.api('tesis', id)).toPromise();
+  }
+  createTesis(data: any) {
+    return this.http.post(this.api('tesis'), data).toPromise();
+  }
+  updateTesis(id: string, data: any) {
+    return this.http.put(this.api('tesis', id), data).toPromise();
+  }
+
   // admision
   getAdmision() {
     return this.http.get(this.api('admision')).toPromise();
