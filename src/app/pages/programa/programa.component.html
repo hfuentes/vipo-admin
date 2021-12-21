@@ -1,1 +1,93 @@
-<p>programa works!</p>
+<h1>Administrador Presentación del Programa</h1>
+<p class="lead">
+  Administrará todos los contenidos de la sección de Presentación del Programa
+</p>
+<hr>
+<app-error-handler [loading]="loadSettings.loading" [error]="loadSettings.error">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <label for="descripcion" class="form-label text-muted lh-1 fw-light fs-6">Descripción del Programa</label>
+        <angular-editor formControlName="descripcion" [config]="{ editable: true, minHeight: '10rem' }">
+        </angular-editor>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="objetivos" class="form-label text-muted lh-1 fw-light fs-6">Objetivos del Programa</label>
+        <angular-editor formControlName="objetivos" [config]="{ editable: true, minHeight: '10rem' }"></angular-editor>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="dirigido" class="form-label text-muted lh-1 fw-light fs-6">Dirigido a</label>
+        <angular-editor formControlName="dirigido" [config]="{ editable: true, minHeight: '10rem' }"></angular-editor>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="plan" class="form-label text-muted lh-1 fw-light fs-6">Plan de Estudios / Malla Curricular</label>
+        <angular-editor formControlName="plan" [config]="{ editable: true, minHeight: '10rem' }"></angular-editor>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="acreditacion" class="form-label text-muted lh-1 fw-light fs-6">Acreditacion</label>
+        <angular-editor formControlName="acreditacion" [config]="{ editable: true, minHeight: '10rem' }">
+        </angular-editor>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="investigacion" class="form-label text-muted lh-1 fw-light fs-6">Líneas de Investigación</label>
+        <angular-editor formControlName="investigacion" [config]="{ editable: true, minHeight: '10rem' }">
+        </angular-editor>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="correo" class="form-label text-muted lh-1 fw-light fs-6">Correo</label>
+        <input type="text" class="form-control" id="correo" formControlName="correo" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="telefono" class="form-label text-muted lh-1 fw-light fs-6">Teléfono</label>
+        <input type="text" class="form-control" id="telefono" formControlName="telefono" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="url" class="form-label text-muted lh-1 fw-light fs-6">Url ir al sitio</label>
+        <input type="text" class="form-control" id="url" formControlName="url" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="jornada" class="form-label text-muted lh-1 fw-light fs-6">Jornada</label>
+        <input type="text" class="form-control" id="jornada" formControlName="jornada" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="modalidad" class="form-label text-muted lh-1 fw-light fs-6">Modalidad</label>
+        <input type="text" class="form-control" id="modalidad" formControlName="modalidad" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="caracter" class="form-label text-muted lh-1 fw-light fs-6">Caracter</label>
+        <input type="text" class="form-control" id="caracter" formControlName="caracter" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="dedicacion" class="form-label text-muted lh-1 fw-light fs-6">Dedicación</label>
+        <input type="text" class="form-control" id="dedicacion" formControlName="dedicacion" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="ahno" class="form-label text-muted lh-1 fw-light fs-6">Año</label>
+        <input type="text" class="form-control" id="ahno" formControlName="ahno" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="postulaciones" class="form-label text-muted lh-1 fw-light fs-6">Postulaciones</label>
+        <input type="text" class="form-control" id="postulaciones" formControlName="postulaciones" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="clases" class="form-label text-muted lh-1 fw-light fs-6">Clases</label>
+        <input type="text" class="form-control" id="clases" formControlName="clases" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="valor" class="form-label text-muted lh-1 fw-light fs-6">Valor</label>
+        <input type="text" class="form-control" id="valor" formControlName="valor" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="subvalor" class="form-label text-muted lh-1 fw-light fs-6">Subvalor</label>
+        <input type="text" class="form-control" id="subvalor" formControlName="subvalor" required>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="pago" class="form-label text-muted lh-1 fw-light fs-6">Métodos de Pago</label>
+        <input type="text" class="form-control" id="pago" formControlName="pago" required>
+      </div>
+      <div class="col-12 mb-3">
+        <button type="submit" class="btn btn-success" [disabled]="!form.valid">Guardar</button>
+      </div>
+    </div>
+  </form>
+</app-error-handler>

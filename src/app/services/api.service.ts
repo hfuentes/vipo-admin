@@ -87,6 +87,14 @@ export class ApiService {
     return this.http.put(this.api('tesis', id), data).toPromise();
   }
 
+  // programa
+  getPrograma() {
+    return this.http.get(this.api('programa')).toPromise();
+  }
+  updatePrograma(id: string, data: any) {
+    return this.http.put(this.api('programa', id), data).toPromise();
+  }
+
   // admision
   getAdmision() {
     return this.http.get(this.api('admision')).toPromise();

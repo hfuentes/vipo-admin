@@ -28,7 +28,7 @@
       </div>
       <div class="col-12 mb-3">
         <label for="cuerpo" class="form-label text-muted lh-1 fw-light fs-6">Cuerpo</label>
-        <angular-editor formControlName="cuerpo"></angular-editor>
+        <angular-editor formControlName="cuerpo" [config]="{ editable: true, minHeight: '10rem' }"></angular-editor>
       </div>
       <div class="col-12 mb-3">
         <div class="form-check">
