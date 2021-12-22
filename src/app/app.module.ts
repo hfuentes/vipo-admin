@@ -11,10 +11,11 @@ import { AdmisionComponent } from './pages/admision/admision.component';
 import { AcademicosComponent } from './pages/academicos/academicos.component';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
 import { LoginComponent } from './pages/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorHandlerComponent } from './components/error-handler/error-handler.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     ReactiveFormsModule,
     AngularEditorModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

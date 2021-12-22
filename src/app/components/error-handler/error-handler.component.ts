@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-error-handler',
@@ -42,7 +43,10 @@ export class Error {
     this.type = error.type || ErrorType.danger;
     this.showClose = error.showClose ? error.showClose : false;
   }
-  static handleServiceError(message: string, showClose?: boolean): Error {
+  static handleServiceError(error: any, showClose?: boolean): Error {
+    let message = error.message;
+    if (showClose === undefined) showClose = true;
+    if (error instanceof HttpErrorResponse) message = error.error.message;
     return new Error({ message, showClose });
   }
 }

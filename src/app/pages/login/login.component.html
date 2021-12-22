@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <div class="card text-white bg-dark mt-3" style="max-width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Login USACH VIPO</h5>
+          <div class="card-text">
+            <app-error-handler [loading]="loadSettings.loading" [error]="loadSettings.error">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-12 mb-3">
+                    <label for="nombre" class="form-label text-muted lh-1 fw-light fs-6">Nombre de Usuario</label>
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre" required>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="password" class="form-label text-muted lh-1 fw-light fs-6">Contraseña</label>
+                    <input type="password" class="form-control" id="password" formControlName="password" required>
+                  </div>
+                  <div class="col-12 mb-3 text-end">
+                    <button type="submit" class="btn btn-secondary" [disabled]="!form.valid">Login</button>
+                  </div>
+                </div>
+              </form>
+            </app-error-handler>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

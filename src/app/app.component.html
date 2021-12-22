@@ -4,8 +4,8 @@
   </div>
 </nav>
 <div class="container-fluid">
-  <div class="row flex-nowrap">
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-secondary">
+  <div class="row" [ngClass]="{'flex-nowrap': !isLogin}">
+    <div *ngIf="!isLogin" class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-secondary">
       <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
           <li>
@@ -51,7 +51,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white align-middle">
+            <a (click)="salir()" class="nav-link text-white align-middle" style="cursor: pointer;">
               <i class="icon-exit"></i>
               <span class="ms-1 d-none d-sm-inline ps-1">Salir</span>
             </a>
@@ -59,7 +59,7 @@
         </ul>
       </div>
     </div>
-    <div class="col py-3">
+    <div class="col" [ngClass]="{'py-3': !isLogin}">
       <router-outlet></router-outlet>
     </div>
   </div>

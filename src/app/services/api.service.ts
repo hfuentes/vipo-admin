@@ -16,6 +16,11 @@ export class ApiService {
     return id ? `${base}/${id}` : base;
   }
 
+  // login
+  login(data: any) {
+    return this.http.post(this.api('auth/sing_in'), data).toPromise();
+  }
+
   // noticias
   getNoticia(id: string) {
     return this.http.get(this.api('noticias', id)).toPromise();

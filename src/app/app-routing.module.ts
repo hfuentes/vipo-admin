@@ -7,9 +7,11 @@ import { ProgramaComponent } from './pages/programa/programa.component';
 import { AdmisionComponent } from './pages/admision/admision.component';
 import { AcademicosComponent } from './pages/academicos/academicos.component';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'noticias', component: NoticiasComponent },
