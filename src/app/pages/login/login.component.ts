@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit {
   }
 
   handleCatch(err: any) {
-    console.log(err);
     this.loadSettings.error = Error.handleServiceError(err);
   }
 
