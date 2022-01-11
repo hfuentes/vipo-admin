@@ -1,4 +1,11 @@
 <h1>Administrador Noticias</h1>
+<div class="position-relative">
+  <div class="position-absolute top-0 end-0">
+    <a href="https://youtu.be/Kip5JcKfaeM" target="black">
+      <span class="badge rounded-pill bg-dark"><b><i class="icon-bulb-idea"></i></b> Ayuda</span>
+    </a>
+  </div>
+</div>
 <p class="lead">
   Administrará todos los contenidos Noticias, crear / modificar y eliminar
 </p>
@@ -9,12 +16,14 @@
       <div class="col-12 mb-3">
         <label for="imagen" class="form-label text-muted lh-1 fw-light fs-6">Imagen</label>
         <input #imagenInput class="form-control" type="file" id="imagen" (change)="onFileChange($event)">
+        <div class="form-text">Recomendaciones: Tamaño 715x370 px (rectangular, dimensionado miniatura), Peso Máximo
+          2MB, La imagen se utilizará como thumbnail en página inicial si se escoje como noticia destacada.</div>
       </div>
       <ng-container *ngIf="form.controls.imagen.value">
-        <div class="col-12 mb-3" >
+        <div class="col-12 mb-3">
           <button class="btn btn-danger btn-sm" (click)="removeImage()">Quitar imagen</button>
         </div>
-        <div class="col-12 mb-3" >
+        <div class="col-12 mb-3">
           <img [src]="form.controls.imagen.value" class="img-fluid img-thumbnail" alt="Imágen">
         </div>
       </ng-container>
@@ -39,7 +48,8 @@
         </div>
       </div>
       <div class="col-12 mb-3">
-        <button type="submit" class="btn btn-success" [disabled]="!form.valid">{{ form.value.id ? 'Editar' : 'Guardar' }}</button>
+        <button type="submit" class="btn btn-success"
+          [disabled]="!form.valid">{{ form.value.id ? 'Editar' : 'Guardar' }}</button>
         <button type="button" class="btn btn-secondary ms-2" (click)="resetForm()">Reiniciar Formulario</button>
       </div>
     </div>
@@ -61,7 +71,9 @@
           <td>{{ item.createdAt | date:"dd-MM-yyyy hh:mm" }}</td>
           <td>
             <i class="icon-edit-1 pe-2" title="Editar" (click)="loadEdit(item.id)"></i>
-            <i class="{{ item.publicado ? 'icon-download-1' : 'icon-upload-1' }} pe-2" title="{{ item.publicado ? 'Archivar' : 'Publicar' }}" (click)="updatePublicar(item.id, !item.publicado)"></i>
+            <i class="{{ item.publicado ? 'icon-download-1' : 'icon-upload-1' }} pe-2"
+              title="{{ item.publicado ? 'Archivar' : 'Publicar' }}"
+              (click)="updatePublicar(item.id, !item.publicado)"></i>
             <i class="icon-cancel-circle" title="Eliminar" (click)="delete(item.id)"></i>
           </td>
         </tr>

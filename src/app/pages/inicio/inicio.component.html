@@ -1,4 +1,11 @@
 <h1>Administrador Pagina Inicial</h1>
+<div class="position-relative">
+  <div class="position-absolute top-0 end-0">
+    <a href="https://youtu.be/Kip5JcKfaeM" target="black">
+      <span class="badge rounded-pill bg-dark"><b><i class="icon-bulb-idea"></i></b> Ayuda</span>
+    </a>
+  </div>
+</div>
 <p class="lead">
   Administrará todos los contenidos de la página inicial
 </p>
@@ -9,6 +16,8 @@
       <div class="col-12 mb-3">
         <label for="slide1" class="form-label text-muted lh-1 fw-light fs-6">Slide 1 - Carrusel Pagina Inicial</label>
         <input #slide1Input class="form-control" type="file" id="slide1" (change)="onImageChange('slide1', $event)">
+        <div class="form-text">Recomendaciones: Tamaño 1200x300 px (rectangular), Peso Máximo 1MB, Calidad puede
+          disminuir en pantallas grandes.</div>
       </div>
       <ng-container *ngIf="form.controls.slide1.value">
         <div class="col-12 mb-3">
@@ -22,6 +31,8 @@
       <div class="col-12 mb-3">
         <label for="slide2" class="form-label text-muted lh-1 fw-light fs-6">Slide 2 - Carrusel Pagina Inicial</label>
         <input #slide2Input class="form-control" type="file" id="slide2" (change)="onImageChange('slide2', $event)">
+        <div class="form-text">Recomendaciones: Tamaño 1200x300 px (rectangular), Peso Máximo 1MB, Calidad puede
+          disminuir en pantallas grandes.</div>
       </div>
       <ng-container *ngIf="form.controls.slide2.value">
         <div class="col-12 mb-3">
@@ -35,6 +46,8 @@
       <div class="col-12 mb-3">
         <label for="slide3" class="form-label text-muted lh-1 fw-light fs-6">Slide 3 - Carrusel Pagina Inicial</label>
         <input #slide3Input class="form-control" type="file" id="slide3" (change)="onImageChange('slide3', $event)">
+        <div class="form-text">Recomendaciones: Tamaño 1200x300 px (rectangular), Peso Máximo 1MB, Calidad puede
+          disminuir en pantallas grandes.</div>
       </div>
       <ng-container *ngIf="form.controls.slide3.value">
         <div class="col-12 mb-3">
@@ -48,6 +61,8 @@
       <div class="col-12 mb-3">
         <label for="slide4" class="form-label text-muted lh-1 fw-light fs-6">Slide 4 - Carrusel Pagina Inicial</label>
         <input #slide4Input class="form-control" type="file" id="slide4" (change)="onImageChange('slide4', $event)">
+        <div class="form-text">Recomendaciones: Tamaño 1200x300 px (rectangular), Peso Máximo 1MB, Calidad puede
+          disminuir en pantallas grandes.</div>
       </div>
       <ng-container *ngIf="form.controls.slide4.value">
         <div class="col-12 mb-3">
@@ -97,6 +112,8 @@
         <label for="admision" class="form-label text-muted lh-1 fw-light fs-6">Imagen Bloque Admisión</label>
         <input #admisionInput class="form-control" type="file" id="admision"
           (change)="onImageChange('admision', $event)">
+        <div class="form-text">Recomendaciones: Tamaño 315x250 px (rectangular), Peso Máximo 1MB, La imagen tendrá texto
+          color blanco encima.</div>
       </div>
       <ng-container *ngIf="form.controls.admision.value">
         <div class="col-12 mb-3">
@@ -110,6 +127,8 @@
         <label for="conocenos" class="form-label text-muted lh-1 fw-light fs-6">Imagen Bloque Conócenos</label>
         <input #conocenosInput class="form-control" type="file" id="conocenos"
           (change)="onImageChange('conocenos', $event)">
+        <div class="form-text">Recomendaciones: Tamaño 315x250 px (rectangular), Peso Máximo 1MB, La imagen tendrá texto
+          color blanco encima.</div>
       </div>
       <ng-container *ngIf="form.controls.conocenos.value">
         <div class="col-12 mb-3">
@@ -122,6 +141,8 @@
       <div class="col-12 mb-3">
         <label for="plan" class="form-label text-muted lh-1 fw-light fs-6">Imagen Bloque Plan de Estudios</label>
         <input #planInput class="form-control" type="file" id="plan" (change)="onImageChange('plan', $event)">
+        <div class="form-text">Recomendaciones: Tamaño 315x250 px (rectangular), Peso Máximo 1MB, La imagen tendrá texto
+          color blanco encima.</div>
       </div>
       <ng-container *ngIf="form.controls.plan.value">
         <div class="col-12 mb-3">
@@ -135,6 +156,8 @@
         <label for="acreditacion" class="form-label text-muted lh-1 fw-light fs-6">Imagen Bloque Acreditación</label>
         <input #acreditacionInput class="form-control" type="file" id="acreditacion"
           (change)="onImageChange('acreditacion', $event)">
+        <div class="form-text">Recomendaciones: Tamaño 315x250 px (rectangular), Peso Máximo 1MB, La imagen tendrá texto
+          color blanco encima.</div>
       </div>
       <ng-container *ngIf="form.controls.acreditacion.value">
         <div class="col-12 mb-3">
@@ -149,6 +172,8 @@
         <label for="cna" class="form-label text-muted lh-1 fw-light fs-6">Imagen Comisión Nacional de
           Acreditación</label>
         <input #cnaInput class="form-control" type="file" id="cna" (change)="onImageChange('cna', $event)">
+        <div class="form-text">Recomendaciones: Tamaño 250x75 px (rectangular, dimensionado, ej: 1500x450 px), Peso
+          Máximo 1MB, La imagen original es PNG fondo transparente con letras blancas.</div>
       </div>
       <ng-container *ngIf="form.controls.cna.value">
         <div class="col-12 mb-3">

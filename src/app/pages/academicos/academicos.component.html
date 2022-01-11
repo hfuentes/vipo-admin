@@ -1,4 +1,11 @@
 <h1>Administrador Cuerpo académico</h1>
+<div class="position-relative">
+  <div class="position-absolute top-0 end-0">
+    <a href="https://youtu.be/Kip5JcKfaeM" target="black">
+      <span class="badge rounded-pill bg-dark"><b><i class="icon-bulb-idea"></i></b> Ayuda</span>
+    </a>
+  </div>
+</div>
 <p class="lead">
   Administrará la lista de cuerpo académico
 </p>
@@ -8,6 +15,7 @@
     <div class="col-12 mb-3">
       <label for="imagen" class="form-label text-muted lh-1 fw-light fs-6">Imagen</label>
       <input #imagenInput class="form-control" type="file" id="imagen" (change)="onFileChange($event)">
+      <div class="form-text">Recomendaciones: Tamaño 300x300 px (cuadrado), Peso Máximo 1MB, Imágen se redondeará.</div>
     </div>
     <ng-container *ngIf="form.controls.imagen.value">
       <div class="col-12 mb-3">

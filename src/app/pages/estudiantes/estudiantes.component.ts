@@ -26,6 +26,9 @@ export class EstudiantesComponent implements OnInit {
     id: [''],
     titulo: ['', Validators.required],
     autor: ['', Validators.required],
+    profesor: ['', Validators.required],
+    tutor: [''],
+    coautor: [''],
     publicacion: ['', Validators.required],
     publicado: [false]
   });
