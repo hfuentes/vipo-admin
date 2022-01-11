@@ -34,6 +34,9 @@ export class InicioComponent implements OnInit {
   @ViewChild('acreditacionInput')
   acreditacionInput?: ElementRef;
 
+  @ViewChild('cnaInput')
+  cnaInput?: ElementRef;
+
   loadSettings: ErrorHandler = {
     loading: false,
     error: undefined
@@ -50,6 +53,7 @@ export class InicioComponent implements OnInit {
     conocenos: [''],
     plan: [''],
     acreditacion: [''],
+    cna: [''],
     facebook: ['', Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')],
     twitter: ['', Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')],
     instagram: ['', Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')],
@@ -127,6 +131,7 @@ export class InicioComponent implements OnInit {
       case 'conocenos': if (this.conocenosInput) this.conocenosInput.nativeElement.value = ''; break;
       case 'plan': if (this.planInput) this.planInput.nativeElement.value = ''; break;
       case 'acreditacion': if (this.acreditacionInput) this.acreditacionInput.nativeElement.value = ''; break;
+      case 'cna': if (this.cnaInput) this.cnaInput.nativeElement.value = ''; break;
     }
     let patch: any = {};
     patch[formControlName] = '';

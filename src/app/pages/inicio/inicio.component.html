@@ -146,6 +146,19 @@
         </div>
       </ng-container>
       <div class="col-12 mb-3">
+        <label for="cna" class="form-label text-muted lh-1 fw-light fs-6">Imagen Comisión Nacional de
+          Acreditación</label>
+        <input #cnaInput class="form-control" type="file" id="cna" (change)="onImageChange('cna', $event)">
+      </div>
+      <ng-container *ngIf="form.controls.cna.value">
+        <div class="col-12 mb-3">
+          <button class="btn btn-danger btn-sm" (click)="removeImage('cna')">Quitar imagen</button>
+        </div>
+        <div class="col-12 mb-3">
+          <img [src]="form.controls.cna.value" class="img-fluid img-thumbnail" alt="Imagen Bloque Acreditación">
+        </div>
+      </ng-container>
+      <div class="col-12 mb-3">
         <label for="facebook" class="form-label text-muted lh-1 fw-light fs-6">Link Facebook</label>
         <input type="text" class="form-control" id="facebook" formControlName="facebook">
       </div>
