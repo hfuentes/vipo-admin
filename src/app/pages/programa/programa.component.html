@@ -47,19 +47,36 @@
       </div>
       <div class="col-12 mb-3">
         <label for="jornada" class="form-label text-muted lh-1 fw-light fs-6">Jornada</label>
-        <input type="text" class="form-control" id="jornada" formControlName="jornada" required>
+        <select class="form-select" id="jornada" formControlName="jornada">
+          <option value="" disabled>Seleccionar ...</option>
+          <option ngValue="Vespertino">Vespertino</option>
+          <option ngValue="Diurno">Diurno</option>
+        </select>
       </div>
       <div class="col-12 mb-3">
         <label for="modalidad" class="form-label text-muted lh-1 fw-light fs-6">Modalidad</label>
-        <input type="text" class="form-control" id="modalidad" formControlName="modalidad" required>
+        <select class="form-select" id="modalidad" formControlName="modalidad">
+          <option value="" disabled>Seleccionar ...</option>
+          <option ngValue="Presencial">Presencial</option>
+          <option ngValue="Online">Online</option>
+          <option ngValue="Mixta">Mixta</option>
+        </select>
       </div>
       <div class="col-12 mb-3">
         <label for="caracter" class="form-label text-muted lh-1 fw-light fs-6">Caracter</label>
-        <input type="text" class="form-control" id="caracter" formControlName="caracter" required>
+        <select class="form-select" id="caracter" formControlName="caracter">
+          <option value="" disabled>Seleccionar ...</option>
+          <option ngValue="Superior">Superior</option>
+          <option ngValue="Técnico">Técnico</option>
+        </select>
       </div>
       <div class="col-12 mb-3">
         <label for="dedicacion" class="form-label text-muted lh-1 fw-light fs-6">Dedicación</label>
-        <input type="text" class="form-control" id="dedicacion" formControlName="dedicacion" required>
+        <select class="form-select" id="dedicacion" formControlName="dedicacion">
+          <option value="" disabled>Seleccionar ...</option>
+          <option ngValue="Completa">Completa</option>
+          <option ngValue="Media">Media</option>
+        </select>
       </div>
       <div class="col-12 mb-3">
         <label for="ahno" class="form-label text-muted lh-1 fw-light fs-6">Año</label>
