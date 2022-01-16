@@ -16,6 +16,7 @@ import { ErrorHandlerComponent } from './components/error-handler/error-handler.
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     AcademicosComponent,
     EstudiantesComponent,
     LoginComponent,
-    ErrorHandlerComponent
+    ErrorHandlerComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,24 @@ export class ApiService {
   login(data: any) {
     return this.http.post(this.api('auth/sing_in'), data).toPromise();
   }
+  getProfile() {
+    return this.http.get(this.api('auth/profile')).toPromise();
+  }
+  getUsuario(id: string) {
+    return this.http.get(this.api('auth', id)).toPromise();
+  }
+  getUsuarios() {
+    return this.http.get(this.api('auth')).toPromise();
+  }
+  updateUsuario(id: string, data: any) {
+    return this.http.put(this.api('auth', id), data).toPromise();
+  }
+  deleteUsuario(id: string) {
+    return this.http.delete(this.api('auth', id)).toPromise();
+  }
+  createUsuario(data: any) {
+    return this.http.post(this.api('auth'), data).toPromise();
+  }
 
   // noticias
   getNoticia(id: string) {

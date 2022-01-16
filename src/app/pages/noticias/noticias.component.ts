@@ -44,13 +44,15 @@ export class NoticiasComponent implements OnInit {
   }
 
   delete(id: string) {
-    this.resetLoading();
-    this.apiService.deleteNoticia(id)
-      .then(() => this.apiService.getNoticias())
-      .then((data) => this.setNoticias(data))
-      .then(() => this.form.reset())
-      .catch((err) => this.handleCatch(err))
-      .finally(() => this.handleFinally());
+    if (confirm('¿Confirma que desea eliminar el registro?')) {
+      this.resetLoading();
+      this.apiService.deleteNoticia(id)
+        .then(() => this.apiService.getNoticias())
+        .then((data) => this.setNoticias(data))
+        .then(() => this.form.reset())
+        .catch((err) => this.handleCatch(err))
+        .finally(() => this.handleFinally());
+    }
   }
 
   loadEdit(id: string) {

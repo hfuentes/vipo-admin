@@ -124,21 +124,25 @@ export class EstudiantesComponent implements OnInit {
   }
 
   deleteEstudiante(id: string) {
-    this.resetLoading();
-    this.apiService.deleteEstudiante(id)
-      .then(() => this.apiService.getEstudiantes())
-      .then((data) => (this.setEstudiantes(data), this.formEstudiantes.reset()))
-      .catch((err) => this.handleCatch(err))
-      .finally(() => this.handleFinally());
+    if (confirm('¿Confirma que desea eliminar el registro?')) {
+      this.resetLoading();
+      this.apiService.deleteEstudiante(id)
+        .then(() => this.apiService.getEstudiantes())
+        .then((data) => (this.setEstudiantes(data), this.formEstudiantes.reset()))
+        .catch((err) => this.handleCatch(err))
+        .finally(() => this.handleFinally());
+    }
   }
 
   deleteTesis(id: string) {
-    this.resetLoading();
-    this.apiService.deleteTesis(id)
-      .then(() => this.apiService.getTesisLista())
-      .then((data) => (this.setTesis(data), this.formTesis.reset()))
-      .catch((err) => this.handleCatch(err))
-      .finally(() => this.handleFinally());
+    if (confirm('¿Confirma que desea eliminar el registro?')) {
+      this.resetLoading();
+      this.apiService.deleteTesis(id)
+        .then(() => this.apiService.getTesisLista())
+        .then((data) => (this.setTesis(data), this.formTesis.reset()))
+        .catch((err) => this.handleCatch(err))
+        .finally(() => this.handleFinally());
+    }
   }
 
   setEstudiantes(data: any) {

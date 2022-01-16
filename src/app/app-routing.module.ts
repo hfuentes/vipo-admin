@@ -8,6 +8,7 @@ import { AdmisionComponent } from './pages/admision/admision.component';
 import { AcademicosComponent } from './pages/academicos/academicos.component';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
 import { LoginComponent } from './pages/login/login.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'admision', component: AdmisionComponent },
   { path: 'academicos', component: AcademicosComponent },
   { path: 'estudiantes', component: EstudiantesComponent },
+  { path: 'usuarios', component: UsuariosComponent }
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -11,17 +12,18 @@ export class AppComponent implements OnInit {
 
   title = 'vipo-usach-admin';
   isLogin = true;
+  isAdmin = false;
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    public authService: AuthService
   ) { }
 
   ngOnInit(): void {
-    console.log(this.router.url);
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.isLogin = event.url.indexOf('login') > -1;
+        this.isAdmin = this.authService.getLocalProfile().esAdmin ? true : false;
       }
     });
   }

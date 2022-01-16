@@ -50,6 +50,12 @@
               <span class="ms-1 d-none d-sm-inline ps-1">Estudiantes</span>
             </a>
           </li>
+          <li *ngIf="authService.getLocalProfile().esAdmin">
+            <a routerLink="/usuarios" routerLinkActive="active" class="nav-link text-white align-middle">
+              <i class="icon-user-male-settings"></i>
+              <span class="ms-1 d-none d-sm-inline ps-1">Usuarios</span>
+            </a>
+          </li>
           <li>
             <a (click)="salir()" class="nav-link text-white align-middle" style="cursor: pointer;">
               <i class="icon-exit"></i>

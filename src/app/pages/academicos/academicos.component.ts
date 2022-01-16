@@ -47,13 +47,15 @@ export class AcademicosComponent implements OnInit {
   }
 
   delete(id: string) {
-    this.resetLoading();
-    this.apiService.deleteAcademico(id)
-      .then(() => this.apiService.getAcademicos())
-      .then((data) => this.setAcademicos(data))
-      .then(() => this.form.reset())
-      .catch((err) => this.handleCatch(err))
-      .finally(() => this.handleFinally());
+    if (confirm('¿Confirma que desea eliminar el registro?')) {
+      this.resetLoading();
+      this.apiService.deleteAcademico(id)
+        .then(() => this.apiService.getAcademicos())
+        .then((data) => this.setAcademicos(data))
+        .then(() => this.form.reset())
+        .catch((err) => this.handleCatch(err))
+        .finally(() => this.handleFinally());
+    }
   }
 
   loadEdit(id: string) {
