@@ -9,6 +9,7 @@ import { AcademicosComponent } from './pages/academicos/academicos.component';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { GaleriaComponent } from './pages/galeria/galeria.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'admision', component: AdmisionComponent },
   { path: 'academicos', component: AcademicosComponent },
   { path: 'estudiantes', component: EstudiantesComponent },
-  { path: 'usuarios', component: UsuariosComponent }
+  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'galeria', component: GaleriaComponent }
 ];
 
 @NgModule({

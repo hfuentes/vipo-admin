@@ -110,6 +110,23 @@ export class ApiService {
     return this.http.put(this.api('tesis', id), data).toPromise();
   }
 
+  // Tesis
+  getGaleriaImagen(id: string) {
+    return this.http.get(this.api('galeria', id)).toPromise();
+  }
+  getGaleriaLista() {
+    return this.http.get(this.api('galeria')).toPromise();
+  }
+  deleteGaleriaImagen(id: string) {
+    return this.http.delete(this.api('galeria', id)).toPromise();
+  }
+  createGaleriaImagen(data: any) {
+    return this.http.post(this.api('galeria'), data).toPromise();
+  }
+  updateGaleriaImagen(id: string, data: any) {
+    return this.http.put(this.api('galeria', id), data).toPromise();
+  }
+
   // programa
   getPrograma() {
     return this.http.get(this.api('programa')).toPromise();

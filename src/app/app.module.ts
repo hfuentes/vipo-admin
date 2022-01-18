@@ -17,6 +17,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { GaleriaComponent } from './pages/galeria/galeria.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
     EstudiantesComponent,
     LoginComponent,
     ErrorHandlerComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
